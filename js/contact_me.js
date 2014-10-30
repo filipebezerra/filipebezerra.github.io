@@ -17,14 +17,52 @@ $(function() {
             if (firstName.indexOf(' ') >= 0) {
                 firstName = name.split(' ').slice(0, -1).join(' ');
             }
+            // Font: https://medium.com/@mariusc23/send-an-email-using-only-javascript-b53319616782
             $.ajax({
-                url: "././mail/contact_me.php",
+                url: "https://mandrillapp.com/api/1.0/messages/send.json",
                 type: "POST",
                 data: {
-                    name: name,
-                    phone: phone,
-                    email: email,
-                    message: message
+                    "key": "8SOwHXWgpMu5YIVDY2NGCA",
+                    "message": {
+                        "html": 
+                                "<div>" +
+                                    "<p>" + 
+                                        message + 
+                                    "</p>" + 
+                                "</div>" +
+                                "<h3>Contact Details</h3>" +
+                                "<div>" +
+                                    "<table>" +
+                                        "<tr>" +
+                                            "<td>Name</td>" +
+                                            "<td>" + name + "</td>" +
+                                        "</tr>" +
+                                        "<tr>" +
+                                            "<td>Email</td>" +
+                                            "<td>" + email + "</td>" +
+                                        "</tr>" +
+                                        "<tr>" +
+                                            "<td>Phone</td>" +
+                                            "<td>" + phone + "</td>" +
+                                        "</tr>" +
+                                    "</table>" +
+                                "</div>"
+                                ,
+                        //"text": message,
+                        "subject": "Contato Freelancer",
+                        "from_email": email,
+                        "from_name": name,
+                        "to": [
+                            {
+                                "email": "filipebzerra@gmail.com",
+                                "name": "Filipe Bezerra",
+                                "type": "to"
+                            }
+                        ],
+                        "important": true,
+                        "auto_html": true
+                    },
+                    "async": false,
                 },
                 cache: false,
                 success: function() {
@@ -45,12 +83,10 @@ $(function() {
                     $('#success').html("<div class='alert alert-danger'>");
                     $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
                         .append("</button>");
-                    $('#success > .alert-danger').append("<strong>Sorry " + firstName + ", it seems that my mail server is not responding. Please try again later!");
+                    $('#success > .alert-danger').append("<strong>Sorry " + firstName + ", it seems that my mail server is not responding. Please try again or wait some minutes!");
                     $('#success > .alert-danger').append('</div>');
-                    //clear all fields
-                    $('#contactForm').trigger("reset");
                 },
-            })
+             })
         },
         filter: function() {
             return $(this).is(":visible");
