@@ -56,8 +56,9 @@ com_crashlytics_export_strings.xml
 Icon
 
 
-# Thumbnails
-._*
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
 
 # Files that might appear on external disk
 .Spotlight-V100
