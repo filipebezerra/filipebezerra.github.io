@@ -421,34 +421,32 @@
 			<div class="row">
 
 				<div class="col-sm-6 col-sm-offset-3">
-
 					<form id="contact-form" role="form" novalidate>
-						<div class="ajax-hidden">
-							<div class="form-group wow fadeInUp">
-								<label class="sr-only" for="name">Nome</label>
-								<input type="text" id="name" class="form-control" placeholder="Nome" required data-validation-required-message="Por gentileza, diga seu nome">
-							</div>
+						<div class="form-group wow fadeInUp">
+							<input type="text" id="name" class="form-control" placeholder="Seu Nome" required data-validation-required-message="Por gentileza, diga seu nome">
+							<p class="help-block text-danger"></p>
+						</div>
 
-							<div class="form-group wow fadeInUp" data-wow-delay=".1s">
-								<label class="sr-only" for="email">Email</label>
-								<input type="email" id="email" class="form-control" placeholder="E-mail" required data-validation-required-message="Por gentileza, diga seu e-mail">
-							</div>
+						<div class="form-group wow fadeInUp" data-wow-delay=".1s">
+							<input type="email" id="email" class="form-control" placeholder="Seu E-mail" required data-validation-required-message="Por gentileza, diga seu e-mail">
+							<p class="help-block text-danger"></p>
+						</div>
 
-							<div class="form-group wow fadeInUp" data-wow-delay=".2s">
-								<label class="sr-only" for="phone">Telefone</label>
-								<input type="tel" id="phone" class="form-control" placeholder="Telefone">
-							</div>
+						<div class="form-group wow fadeInUp" data-wow-delay=".2s">
+							<input type="tel" id="phone" class="form-control" placeholder="Seu Telefone">
+						</div>
 
-							<div class="form-group wow fadeInUp" data-wow-delay=".3s">
-								<textarea class="form-control" id="message" rows="7" placeholder="Fale sobre sua idéia ou projeto" required data-validation-required-message="Por gentileza, diga sua mensagem">
-								</textarea>
-							</div>
+						<div class="form-group wow fadeInUp" data-wow-delay=".3s">
+							<textarea class="form-control" id="message" rows="7" placeholder="Fale sobre sua idéia ou projeto" required data-validation-required-message="Por gentileza, diga sua mensagem"></textarea>
+							<p class="help-block text-danger"></p>
+						</div>
 
+						<div class="clearfix"></div>
+						<div>
+							<div id="success"></div>
 							<button type="submit" class="btn btn-lg btn-block wow fadeInUp" data-wow-delay=".4s">Enviar Mensagem</button>
 						</div>
-						<div class="ajax-response"></div>
 					</form>
-
 				</div>
 
 			</div><!-- .row -->
@@ -510,5 +508,7 @@
     <script src="assets/js/waypoints.min.js"></script>
     <script src="assets/js/jquery.cbpQTRotator.js"></script>
 	<script src="assets/js/custom.js"></script>
+	<script src="assets/js/jqBootstrapValidation.js"></script>
+    <script src="assets/js/contact_me.js"></script>
 </body>
 </html>
