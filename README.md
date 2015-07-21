@@ -1,6 +1,6 @@
-Site-ProfessionalPortfolio
+Portfolio Site
 ==========================
 
-My single-page site for professional portfolio.
+This is the codebase for my portfolio spa (Single-Page application) site.
 
-Access this page on my portfolio site http://filipebezerra.github.io/
+You can access it in live site at http://filipebezerra.github.io/
